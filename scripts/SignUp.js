@@ -8,10 +8,11 @@ function SubmitSignUp() {
         console.log("Username:", username);
         console.log("Password:", password);
         console.log("Registration Date:", registrationDate);
+        let user = createUser(0, email, password, registrationDate);
         document.getElementById("email").value = "";
         document.getElementById("username").value = "";
         document.getElementById("password").value = "";
-            const api = `https://proj.ruppin.ac.il/cgroup23/test2/tar1/api/User/logIn?email=${email}`
+          //  const api = `https://proj.ruppin.ac.il/cgroup23/test2/tar1/api/User/logIn?email=${email}`
             ajaxCall("POST", api, JSON.stringify(password), successSubmitLogin, errorSubmitLogin);
             return false;
         }
