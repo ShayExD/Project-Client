@@ -1,0 +1,71 @@
+body {
+    background-color: #191414;
+    font-family: Arial, sans-serif;
+    color: #101010;
+  }
+
+  .header{
+    text-align: center;
+    margin: auto;
+    color:#101010;
+
+  }
+
+  .container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #393939;
+    border-radius: 7px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+  img{
+    width: 250px;
+    height: 250px;
+  }
+
+  h2 {
+    color: #fff;
+    margin-top: 0;
+  }
+  
+  p{
+    color: #fff;
+  }
+  a{
+    color: #1DB954;
+  }
+
+  input[type="email"],
+  input[type="text"],
+  input[type="password"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+
+  input[type="submit"] {
+    width: 80%;
+    padding: 10px;
+    background-color: #1DB954;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #1ed760;
+  }
+
+  @media only screen and (max-width: 480px) {
+    /* Responsive styling for smaller phone sizes */
+    .container {
+      max-width: 90%;
+    }
+  }

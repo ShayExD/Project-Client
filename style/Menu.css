@@ -1,0 +1,78 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the menu items horizontally */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width:100%;
+  background-color: rgb(55, 55, 55);
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Styles for the logo */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Styles for the menu items */
+.menu-items {
+  margin: auto;
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu-items li:hover {
+  color: #1DB954; /* Change the text color to green on hover */
+}
+
+.menu-items li {
+  display: inline-block; /* Display the menu items in a row */
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+/* Styles for the hamburger icon */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin-bottom: 5px;
+}
+
+/* Media query for responsive design */
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    margin: auto;
+  }
+
+  .menu-items {
+    display: none;
+  }
+
+  .hamburger {
+    margin-left: 10px;
+    margin-bottom: 10px;
+
+    display: block;
+  }
+
+  .show-menu .menu-items {
+    display: block;
+  }
+}
+
+
+
