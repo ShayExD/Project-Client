@@ -1,3 +1,7 @@
+import { createSong,createUser,createArtist } from './Models';
+import { ajaxCall } from './ajaxCalls';
+
+
 function SubmitLogin() {
     let email = $("#email").val()
     let password = $("#password").val()

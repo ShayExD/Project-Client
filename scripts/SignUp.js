@@ -1,3 +1,6 @@
+import { createSong,createUser,createArtist } from './Models';
+import { ajaxCall } from './ajaxCalls';
+
 
 function SubmitSignUp() {
         var email = document.getElementById("email").value;
