@@ -1,0 +1,106 @@
+﻿body {
+
+}
+
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow: auto;
+}
+
+.card {
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width:300px;
+    height:400px;
+    margin:5px;
+}
+
+
+.card-content {
+    padding: 16px;
+}
+
+.card-title {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.card-artist {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #777777;
+}
+
+.card-id {
+    font-size: 14px;
+    color: #888888;
+}
+
+.card-text {
+    font-size: 14px;
+    color: #555555;
+}
+
+.card-lyrics {
+    width:250px;
+    height:100px;
+}
+
+.card-lyricsheader {
+
+    font-size: 14px;
+    color: #555555;
+}
+.FindSong{
+    width:800px;
+    margin:auto;
+    text-align:center;
+}
+.radio {
+    width: 100px;
+    height:15px;
+}
+#search {
+    width: 100px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-left:20px;
+}
+
+#searchBtn {
+    height:40px;
+    display: block;
+    width: 200px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #ff5a5f;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+
+
+#FindSong {
+    margin: auto;
+    display: flex;
+}
+
+
+#renderSearch {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow: auto;
+}

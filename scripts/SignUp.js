@@ -1,5 +1,5 @@
-import { createSong,createUser,createArtist } from './Models';
-import { ajaxCall } from './ajaxCalls';
+//import { createSong,createUser,createArtist } from './Models';
+//import { ajaxCall } from './ajaxCalls';
 
 
 function SubmitSignUp() {

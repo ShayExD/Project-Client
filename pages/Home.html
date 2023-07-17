@@ -1,38 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../style/Menu.css">
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="../style/Menu.css">
+    <link href="../style/Home.css" rel="stylesheet" />
+
+    <!--SCRIPT-->
+    <script src="../scripts/ajaxCalls.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
             integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
             crossorigin="anonymous"></script>
- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script src="/scripts/SignUp.js"></script>
-  <script>
-      function toggleMenu() {
-      var menuItems = document.querySelector('.menu-items');
-      menuItems.classList.toggle('show-menu');
-    }
-  </script>
-  <title>Sign Up</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="/scripts/SignUp.js"></script>
+    <script>
+        function toggleMenu() {
+            var menuItems = document.querySelector('.menu-items');
+            menuItems.classList.toggle('show-menu');
+        }
+    </script>
+
+    <title>Sign Up</title>
+    <link href="../style/Home.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="../scripts/Home.js"></script>
 </head>
-<div class="header">
-    <div class="logo">Logo</div>
-    <ul class="menu-items">
-      <li>Home</li>
-      <li>Login</li>
-      <li>Discover</li>
-      <li>Radio</li>
-      <li>Library</li>
-    </ul>
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
+<body onload="init()">
+
+    <div class="header">
+        <div class="logo">Logo</div>
+        <ul class="menu-items">
+            <li>Home</li>
+            <li>Login</li>
+            <li>Discover</li>
+            <li>Radio</li>
+            <li>Library</li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
-  </div>
-  <div class="container">
-  </div>
+    <div id="title1" style="text-align:center">
+        <h1>some songs</h1>
+    </div>
+    <div id="container"></div>
+    <div id="title2" style="text-align:center">
+        <h1>Find Your Songs</h1>
+    </div>
+    <div class="FindSong" style="margin:auto;">
+        <input class="radio" type="radio" value="song" name="o" /> By song Name
+
+        <input class="radio" type="radio" value="artist" name="o" /> By artist Name
+
+        <input class="radio" type="radio" value="lyrics" name="o" /> By lyrics
+    </div>
+    <div class="FindSong" style="margin-top:20px;">
+        <input id="search" type="text" placeholder="enter key search" />
+        <input id="searchBtn" type="button" onclick="search()" value="search" />
+    </div>
+    <div id="renderSearch">
+
+    </div>
+
 </body>
 </html>
