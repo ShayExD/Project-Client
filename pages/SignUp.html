@@ -8,7 +8,8 @@
             integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
             crossorigin="anonymous"></script>
  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script src="/scripts/SignUp.js"></script>
+ <script src="../scripts/ajaxCalls.js"></script>
+  <script src="../scripts/SignUp.js"></script>
   <title>Sign Up</title>
 </head>
 <div class="header">
@@ -16,10 +17,11 @@
 </div>
   <div class="container">
     <h2>Sign Up</h2>
-    <form id="formSignUp" onsubmit="event.preventDefault(); saveRegistrationData();">
+    <form id="formSignUp">
       <input type="email" id="email" placeholder="Email" required><br>
       <input type="text" id="username" placeholder="Username" required><br>
-      <input type="password" id="password" name="password" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" title="Must contain at least one lowercase letter, one uppercase letter, and one digit, and be at least 8 characters long" required="">      <input type="submit" value="Sign Up">
+      <input type="password" id="password" name="password" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" title="Must contain at least one lowercase letter, one uppercase letter, and one digit, and be at least 8 characters long" required="">  
+      <input type="submit" value="Sign Up">
     </form>
     <p>Already have an account? <a href="Login.html">Log In</a></p>
   </div>

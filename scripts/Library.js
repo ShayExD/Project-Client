@@ -103,48 +103,21 @@ function successrenderSearchByArtist(data) {
     
     
 
-        const lyricsBox = document.createElement('div');
-        lyricsBox.classList.add('lyrics-box');
-        lyricsBox.textContent = data[i].lyrics;
+        const lyricsBox = document.createElement('button');
+        lyricsBox.textContent = "click for lyrics";
+        lyricsBox.classList.add('AllButtons');
+        lyricsBox.onclick = function() {
+             window.open("lyrics.html","_blank");
+             localStorage.setItem("lyrics", JSON.stringify(data[i]));
+            }
+
         card.appendChild(lyricsBox);
     
         cardContainer.appendChild(card);
     }
 
 
-    //for (let i = 0; i < 4; i++) {
-        const cardDiv = document.createElement('div');
-        cardDiv.classList.add('card');
-        const cardContentDiv = document.createElement('div');
-        cardContentDiv.classList.add('card-content');
-        const titleElement = document.createElement('h3');
-        titleElement.classList.add('card-title');
-        titleElement.textContent = 'Song: ' + data[i].songName;
-        const artistElement = document.createElement('p');
-        artistElement.classList.add('card-artist');
-        artistElement.textContent = 'Artist: ' + data[i].artist;
-
-        const idElement = document.createElement('p');
-        idElement.classList.add('card-id');
-        idElement.textContent = 'ID:' + data[i].id;
-
-        const lyricsheader = document.createElement("h1");
-        lyricsheader.classList.add('card-lyricsheader');
-        lyricsheader.textContent = "lyrics:";
-        const lyrics = document.createElement('textarea');
-        lyrics.classList.add('card-lyrics');
-        lyrics.rows = "10";
-        lyrics.cols = "200";
-        lyrics.textContent = data[i].lyrics;
-
-        cardContentDiv.appendChild(idElement);
-        cardContentDiv.appendChild(titleElement);
-        cardContentDiv.appendChild(artistElement);
-        cardContentDiv.appendChild(lyricsheader);
-        cardContentDiv.appendChild(lyrics);
-        cardDiv.appendChild(cardContentDiv);
-        result.appendChild(cardDiv);
-    //}
+    
 }
 
 function errorrenderSearchByArtist(err) {
