@@ -1,127 +1,83 @@
-//import { createSong,createUser,createArtist } from './Models';
-//import { ajaxCall } from './ajaxCalls';
+
+function init() {
+    renderHeader()
+    renderRightHeader();
 
 
-//function initLibrary() { 
- //   renderSongs();   
-//}
+}
 
+function renderHeader()
+{
+    let check = JSON.parse(localStorage.getItem('logged user'))
+    console.log(check)
+    const ul = document.getElementById("ul");
+    if (check != null) {
+        if (check.email != "") {
+            const li4 = document.createElement('li');
+            const a4 = document.createElement('a');
+            a4.textContent = "Library";
+            a4.href = "Library.html";
+            li4.appendChild(a4);
+            ul.appendChild(li4);
 
-
-
-//function renderSongs() {
-    //const api = `https://localhost:7087/api/Song/GetAllSongs`
-   // ajaxCall("GET", api, "", successrenderSongs, errorrenderSongs);
-   // return false;
-//}
-
-//function successrenderSongs(data) {
-    console.log(data);
-    for (let i = 0; i < 4; i++)
-    {
-        const cardDiv = document.createElement('div');
-        cardDiv.classList.add('card');
-        const cardContentDiv = document.createElement('div');
-        cardContentDiv.classList.add('card-content');
-        const titleElement = document.createElement('h3');
-        titleElement.classList.add('card-title');
-        titleElement.textContent = 'Song: ' + data[i].songName;
-        const artistElement = document.createElement('p');
-        artistElement.classList.add('card-artist');
-        artistElement.textContent = 'Artist: '+data[i].artist;
-        
-        const idElement = document.createElement('p');
-        idElement.classList.add('card-id');
-        idElement.textContent = 'ID:' + data[i].id;
-
-        const lyricsheader = document.createElement("h1");
-        lyricsheader.classList.add('card-lyricsheader');
-        lyricsheader.textContent = "lyrics:";
-        const lyrics = document.createElement('textarea');
-        lyrics.classList.add('card-lyrics');
-        lyrics.rows = "10";
-        lyrics.cols = "200";
-        lyrics.textContent = data[i].lyrics;
-
-        cardContentDiv.appendChild(idElement);
-        cardContentDiv.appendChild(titleElement);
-        cardContentDiv.appendChild(artistElement);      
-        cardContentDiv.appendChild(lyricsheader);
-        cardContentDiv.appendChild(lyrics);
-        cardDiv.appendChild(cardContentDiv);
-        document.getElementById("container").appendChild(cardDiv);
-    }
-//}
-
-//function errorrenderSongs(err) {
-    swal("Something wrong", "try again", "error");
-//}
-
-//function search() {
-    const radioButtons = document.getElementsByName('o');
-    let selectedGender;
-
-    for (let i = 0; i < radioButtons.length; i++) {
-        if (radioButtons[i].checked) {
-            selectedGender = radioButtons[i].value;
-            break;
+            const li5 = document.createElement('li');
+            const a5 = document.createElement('a');
+            a5.textContent = "Favorites";
+            a5.href = "Favorites.html";
+            li5.appendChild(a5);
+            ul.appendChild(li5);
         }
     }
+    else {
+            const ul = document.getElementById("ul");
+            const li1 = document.createElement('li');
+            const a1 = document.createElement('a');
+            a1.textContent = "Login";
+            a1.href = "Login.html";
+            li1.appendChild(a1);
+            ul.appendChild(li1);
 
-    if (selectedGender == "artist")
-    {
-        renderSearchByArtist();
+            const li2 = document.createElement('li');
+            const a2 = document.createElement('a');
+            a2.textContent = "Sign Up";
+            a2.href = "SignUp.html";
+            li2.appendChild(a2);
+        ul.appendChild(li2);
+
+
+        const li3 = document.createElement('li');
+        const a3 = document.createElement('a');
+        a3.textContent = "Library";
+        a3.href = "Library.html";
+        li3.appendChild(a3);
+        ul.appendChild(li3);
+
+        }
     }
-//}
+    
 
-//function renderSearchByArtist()
-//{
-    let x = document.getElementById("search");
-    let text = x.value;
-    alert(text);
-    const api = `https://localhost:7087/api/Song/getSongsByArtist?artist=${text}`
-    ajaxCall("GET", api, "", successrenderSearchByArtist, errorrenderSearchByArtist);
-    return false;
-//}
-//function successrenderSearchByArtist(data) {
-    console.log(data);
-    let result = document.getElementById("renderSearch");
-    result.innerHTML = "";
-    for (let i = 0; i < 4; i++) {
-        const cardDiv = document.createElement('div');
-        cardDiv.classList.add('card');
-        const cardContentDiv = document.createElement('div');
-        cardContentDiv.classList.add('card-content');
-        const titleElement = document.createElement('h3');
-        titleElement.classList.add('card-title');
-        titleElement.textContent = 'Song: ' + data[i].songName;
-        const artistElement = document.createElement('p');
-        artistElement.classList.add('card-artist');
-        artistElement.textContent = 'Artist: ' + data[i].artist;
 
-        const idElement = document.createElement('p');
-        idElement.classList.add('card-id');
-        idElement.textContent = 'ID:' + data[i].id;
 
-        const lyricsheader = document.createElement("h1");
-        lyricsheader.classList.add('card-lyricsheader');
-        lyricsheader.textContent = "lyrics:";
-        const lyrics = document.createElement('textarea');
-        lyrics.classList.add('card-lyrics');
-        lyrics.rows = "10";
-        lyrics.cols = "200";
-        lyrics.textContent = data[i].lyrics;
 
-        cardContentDiv.appendChild(idElement);
-        cardContentDiv.appendChild(titleElement);
-        cardContentDiv.appendChild(artistElement);
-        cardContentDiv.appendChild(lyricsheader);
-        cardContentDiv.appendChild(lyrics);
-        cardDiv.appendChild(cardContentDiv);
-        result.appendChild(cardDiv);
+
+
+function renderRightHeader() {
+    ///-User at right side-///
+    let DivHeader = document.getElementById("Homeheader")
+    let DivUser = document.createElement('div');
+    DivUser.className = "user";
+    let pUser = document.createElement('p');
+    pUser.className = "email";
+    pUser.innerHTML = "User's email: <br>" + JSON.parse(localStorage.getItem('logged user')).email;
+    DivUser.appendChild(pUser);
+    let aLogout = document.createElement('a');
+    aLogout.className = "logout";
+    aLogout.textContent = "logout";
+    aLogout.href = "Login.html";
+    aLogout.onclick = function () {
+        localStorage.setItem('logged user', null);
     }
-//}
+    DivUser.appendChild(aLogout);
+    DivHeader.appendChild(DivUser);
 
-//function errorrenderSearchByArtist(err) {
-    swal("Something wrong", "try again", "error");
-//}
+}

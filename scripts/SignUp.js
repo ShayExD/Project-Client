@@ -7,20 +7,21 @@
 
 function SubmitSignUp() {
     var email = document.getElementById("email").value;
-    var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
+    var username = document.getElementById("username").value;
     var registrationDate = new Date().toUTCString();
-     let user = createUser(0, email, password, registrationDate);
+    let user = createUser(0, email, password, username, registrationDate);
      console.log(user);
         document.getElementById("email").value = "";
         document.getElementById("username").value = "";
         document.getElementById("password").value = "";
-           const api = `https://localhost:7087/api/Users/SignUp`;
+        const api = `https://localhost:7087/api/Users/SignUp`;
             ajaxCall("POST", api, JSON.stringify(user), successSubmitSignUp, errorSubmitSignUp);
             return false;
         }
 
-        function successSubmitSignUp(data) {
+function successSubmitSignUp(data) {
+             alert(data);
             if(data==true){
                 localStorage.setItem("User", JSON.stringify(data));
                 swal("Sign Up Succeed", "Great Job", "success");

@@ -1,14 +1,14 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/theme.css">
     <link rel="stylesheet" href="../style/Menu.css">
-    <link rel="stylesheet" href="../style/Library.css">
+    <link rel="stylesheet" href="../style/carousle.css">
+    <link rel="stylesheet" href="../style/Home.css">
+    <script src="../scripts/Models.js"></script>
     <script src="../scripts/ajaxCalls.js"></script>
-    <script src="../scripts/Library.js"></script>
-    <link href="../style/Menu.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
             integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
             crossorigin="anonymous"></script>
@@ -19,18 +19,19 @@
             menuItems.classList.toggle('show-menu');
         }
     </script>
-    <script src="../scripts/Models.js"></script>
-    <title>Library</title>
+    <title>Home</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="../scripts/Favorites.js"></script>
+    <link href="../style/Favorites.css" rel="stylesheet" />
+    <script src="../scripts/Models.js"></script>
 </head>
 <body onload="init()">
     <div id="Homeheader" class="header">
         <div class="logo"><img src="../images/logo.png"></div>
         <ul id="ul" class="menu-items">
             <li><a href="Home.html">Home</a></li>
-            <!--<li><a href="Login.html">Login</a></li>
-            <li><a href="SignUp.html">Sign Up</a></li>
-            <li><a href="Library.html">Library</a></li>-->
+            <!--<li><a href="Library.html">Library</a></li>
+            <li><a href="Favorite.html">Favorites</a></li>-->
         </ul>
         <div class="hamburger" onclick="toggleMenu()">
             <span></span>
@@ -38,23 +39,13 @@
             <span></span>
         </div>
     </div>
-    </div>
+    <div id="cardContainer" class="card-container">
 
-    <div class ="SearchDiv">
-    <div class="search-container">
-        <input type="text" id="searchBar" placeholder="Search for songs">
-        <select id="searchOptions">
-          <option value="all">All</option>
-          <option value="artist">By Artist</option>
-          <option value="songName">By Song Name</option>
-          <option value="lyrics">By Lyrics</option>
-        </select>
-        <button onclick="search()" value="search" id="searchButton">Search</button>
-      </div>
-    </div>
-    <div class="card-container" id="cardContainer"></div>
+
 
     </div>
+    
+
 
 </body>
 </html>

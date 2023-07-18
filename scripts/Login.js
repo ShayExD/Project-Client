@@ -9,7 +9,7 @@ function SubmitLogin() {
 
 function successSubmitLogin(data) {
     console.log("check");
-    localStorage.setItem("User", JSON.stringify(data));
+    localStorage.setItem("logged user", JSON.stringify(data));
     swal("Loged In Successfuly", "Great Job", "success");
     window.location.href = "Home.html"
 }

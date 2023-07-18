@@ -1,0 +1,76 @@
+﻿body {
+}
+
+.middle {
+    margin-top: 100px;
+}
+
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow: auto;
+}
+
+.user {
+    width: 200px;
+}
+
+
+.card-container {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    width: calc(25% - 20px); /* Four cards in a row */
+    background-color: #282828; /* Spotify background color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
+}
+
+    .card h3 {
+        font-size: 24px; /* Increased font size for song name */
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    .card p {
+        margin: 0;
+        color: #b3b3b3; /* Lighter text color for other details */
+    }
+
+@media only screen and (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+}
+
+
+.lyrics-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 20%;
+    height: 20%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    overflow: auto;
+}
+
+.card:hover .lyrics-box {
+    display: block; /* Show lyrics box on hover */
+}
