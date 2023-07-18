@@ -1,22 +1,17 @@
-//import { createSong,createUser,createArtist } from './Models';
-//import { ajaxCall } from './ajaxCalls';
+function initLibrary() { 
+    renderSongs();   
+}
 
+function renderSongs() {
+    const api = `https://localhost:7087/api/Song/GetAllSongs`
+    ajaxCall("GET", api, "", successrenderSongs, errorrenderSongs);
+    return false;
+}
 
-//function initLibrary() { 
- //   renderSongs();   
-//}
-
-
-
-
-//function renderSongs() {
-    //const api = `https://localhost:7087/api/Song/GetAllSongs`
-   // ajaxCall("GET", api, "", successrenderSongs, errorrenderSongs);
-   // return false;
-//}
-
-//function successrenderSongs(data) {
+function successrenderSongs(data) {
     console.log(data);
+    let result = document.getElementById("renderSearch");
+    result="";
     for (let i = 0; i < 4; i++)
     {
         const cardDiv = document.createElement('div');
@@ -49,45 +44,75 @@
         cardContentDiv.appendChild(lyricsheader);
         cardContentDiv.appendChild(lyrics);
         cardDiv.appendChild(cardContentDiv);
-        document.getElementById("container").appendChild(cardDiv);
+        document.getElementById("renderSearch").appendChild(cardDiv);
     }
-//}
+}
 
-//function errorrenderSongs(err) {
+function errorrenderSongs(err) {
     swal("Something wrong", "try again", "error");
-//}
+}
 
-//function search() {
-    const radioButtons = document.getElementsByName('o');
-    let selectedGender;
 
-    for (let i = 0; i < radioButtons.length; i++) {
-        if (radioButtons[i].checked) {
-            selectedGender = radioButtons[i].value;
-            break;
-        }
-    }
+function search() {
 
-    if (selectedGender == "artist")
-    {
+    var selectElement = document.getElementById("searchOptions");
+    var selectedValue = selectElement.value;
+    if(selectedValue=="artist"){
         renderSearchByArtist();
-    }
-//}
 
-//function renderSearchByArtist()
-//{
-    let x = document.getElementById("search");
-    let text = x.value;
-    alert(text);
-    const api = `https://localhost:7087/api/Song/getSongsByArtist?artist=${text}`
+    }
+    if(selectedValue=="all"){
+        renderSongs();
+    }
+    
+
+}
+
+
+function renderSearchByArtist()
+{
+    let searchBar = document.getElementById("searchBar");
+    let inputInSearchBar = searchBar.value;
+    alert(inputInSearchBar);
+    const api = `https://localhost:7087/api/Song/getSongsByArtist?artist=${inputInSearchBar}`
     ajaxCall("GET", api, "", successrenderSearchByArtist, errorrenderSearchByArtist);
     return false;
-//}
-//function successrenderSearchByArtist(data) {
+}
+
+function successrenderSearchByArtist(data) {
     console.log(data);
-    let result = document.getElementById("renderSearch");
-    result.innerHTML = "";
-    for (let i = 0; i < 4; i++) {
+    const cardContainer = document.getElementById('cardContainer');
+    cardContainer.innerHTML = "";
+
+    for (let i = 0; i < data.length; i++){
+
+        const card = document.createElement('div');
+        card.classList.add('card');
+    
+        const nameElement = document.createElement('h3');
+        nameElement.textContent = data[i].songName;
+        card.appendChild(nameElement);
+    
+        const idElement = document.createElement('p');
+        idElement.textContent = `Song ID: ${data[i].id}`;
+        card.appendChild(idElement);
+    
+        const artistElement = document.createElement('p');
+        artistElement.textContent = `Artist: ${data[i].artist}`;
+        card.appendChild(artistElement);
+    
+    
+
+        const lyricsBox = document.createElement('div');
+        lyricsBox.classList.add('lyrics-box');
+        lyricsBox.textContent = data[i].lyrics;
+        card.appendChild(lyricsBox);
+    
+        cardContainer.appendChild(card);
+    }
+
+
+    //for (let i = 0; i < 4; i++) {
         const cardDiv = document.createElement('div');
         cardDiv.classList.add('card');
         const cardContentDiv = document.createElement('div');
@@ -119,9 +144,9 @@
         cardContentDiv.appendChild(lyrics);
         cardDiv.appendChild(cardContentDiv);
         result.appendChild(cardDiv);
-    }
-//}
+    //}
+}
 
-//function errorrenderSearchByArtist(err) {
+function errorrenderSearchByArtist(err) {
     swal("Something wrong", "try again", "error");
-//}
+}

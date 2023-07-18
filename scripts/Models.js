@@ -5,3 +5,6 @@ const createUser = (id, email, password, registrationDate) => ({ id, email, pass
 //const createArtist = (id, artist, SongName, text) => ({ id, artist, SongName, text});
 
 const createSong = (id, artist, SongName, text) => ({ id, artist, SongName, text});
+
+
+export * from './Module.js';

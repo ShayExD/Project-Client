@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/theme.css">
     <link rel="stylesheet" href="../style/Menu.css">
-    <link rel="stylesheet" href="../style/carousle.css">
-    <link rel="stylesheet" href="../style/Home.css">
-
+    <link rel="stylesheet" href="../style/Library.css">
 
     <script src="../scripts/ajaxCalls.js"></script>
+    <script src="../scripts/Library.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
             integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
             crossorigin="anonymous"></script>
@@ -20,10 +20,10 @@
             menuItems.classList.toggle('show-menu');
         }
     </script>
-    <title>Home</title>
+    <title>Library</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
-<body onload="">
+<body>
     <div class="header">
         <div class="logo"><img src="../images/logo.png"></div>
         <ul class="menu-items">
@@ -39,45 +39,23 @@
             <span></span>
         </div>
     </div>
-    <div class="middle">
-    <div class="container">
-        <div class="carousel">
-          <div class="item a">A</div>
-          <div class="item b">B</div>
-          <div class="item c">C</div>
-          <div class="item d">D</div>
-          <div class="item e">E</div>
-          <div class="item f">F</div>
-        </div>
+    </div>
+
+    <div class ="SearchDiv">
+    <div class="search-container">
+        <input type="text" id="searchBar" placeholder="Search for songs">
+        <select id="searchOptions">
+          <option value="all">All</option>
+          <option value="artist">By Artist</option>
+          <option value="songName">By Song Name</option>
+          <option value="lyrics">By Lyrics</option>
+        </select>
+        <button onclick="search()" value="search" id="searchButton">Search</button>
       </div>
-      <div class="buttons">
-      <div class="prev">Prev</div>
-      <div class="next">Next</div>
     </div>
+    <div class="card-container" id="cardContainer"></div>
+
     </div>
-      <script>
-        var carousel = $(".carousel"),
-    currdeg  = 0;
-
-$(".next").on("click", { d: "n" }, rotate);
-$(".prev").on("click", { d: "p" }, rotate);
-
-function rotate(e){
-  if(e.data.d=="n"){
-    currdeg = currdeg - 60;
-  }
-  if(e.data.d=="p"){
-    currdeg = currdeg + 60;
-  }
-  carousel.css({
-    "-webkit-transform": "rotateY("+currdeg+"deg)",
-    "-moz-transform": "rotateY("+currdeg+"deg)",
-    "-o-transform": "rotateY("+currdeg+"deg)",
-    "transform": "rotateY("+currdeg+"deg)"
-  });
-}
-      </script>
-
 
 </body>
 </html>
