@@ -25,7 +25,14 @@ function renderHeader() {
             a5.href = "Favorites.html";
             li5.appendChild(a5);
             ul.appendChild(li5);
-        }
+
+            const li6 = document.createElement('li');
+            const a6 = document.createElement('a');
+            a6.textContent = "Artists";
+            a6.href = "Artists.html";
+            li6.appendChild(a6);
+            ul.appendChild(li6);
+            }
     }
     else {
         const ul = document.getElementById("ul");
@@ -51,6 +58,14 @@ function renderHeader() {
         li3.appendChild(a3);
         ul.appendChild(li3);
 
+        const li4 = document.createElement('li');
+        const a4 = document.createElement('a');
+        a4.textContent = "Artists";
+        a4.href = "Artists.html";
+        li4.appendChild(a4);
+        ul.appendChild(li4);
+
+
     }
 }
 
@@ -66,7 +81,7 @@ function renderRightHeader() {
     let aLogout = document.createElement('a');
     aLogout.className = "logout";
     aLogout.textContent = "logout";
-    aLogout.href = "Login.html";
+    aLogout.href = "Home.html";
     aLogout.onclick = function () {
         localStorage.setItem('logged user', null);
     }
@@ -74,3 +89,6 @@ function renderRightHeader() {
     DivHeader.appendChild(DivUser);
 
 }
+
+
+
