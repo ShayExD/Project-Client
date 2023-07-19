@@ -17,7 +17,8 @@ function successrenderFavoriteSongs(data) {
     const cardContainer = document.getElementById('cardContainer');
     cardContainer.innerHTML = "";
 
-    for (let i = 0; i < data.length; i++) {
+    for (let i = 0; i < data.length; i++)
+    {
 
         const card = document.createElement('div');
         card.classList.add('card');
