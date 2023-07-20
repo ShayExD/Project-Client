@@ -2,6 +2,10 @@
 let divTable;
 let AllFavorites=[];
 let AllUsers=[];
+
+let SongsAddedToFavorites=[];
+let AllSongs=[];
+
 let count=0;
 
 let AllUsersWithFavoritesSongs=[];
@@ -12,12 +16,48 @@ function initTable(){
 
 
 function initInformation(){
-    const api = `https://localhost:7087/api/Users/getAllUsers`;
-    ajaxCall("GET", api, "", successGetAllUsers, errorGetAllUsers);
+    const apiUsers = `https://localhost:7087/api/Users/getAllUsers`;
+    ajaxCall("GET", apiUsers, "", successGetAllUsers, errorGetAllUsers);
 
-    const api = `https://localhost:7087/api/Users/getAllUsers`;
-    ajaxCall("GET", api, "", successGetAllUsers, errorGetAllUsers);
+    const apiSongs = `https://localhost:7087/api/Song/GetAllSongs`;
+    ajaxCall("GET", apiSongs, "", successGetAllSongs, errorGetAllSongs);
 
+    const apiSongsFavorites = `https://localhost:7087/api/Song/getSongsCountInFavorite`;
+    ajaxCall("GET", apiSongs, "", successGetSongsFavorites, errorGetSongsFavorites);
+
+}
+
+
+
+function successGetSongsFavorites(songsWithCount){
+    console.log(songsWithCount);
+    for(let EachSong of songsWithCount ){
+        for(let song of AllSongs){
+            if(EachSong.song==song.songName){
+                let songWithCount=createSongWithCount(song.songName,song.artist,song.text,EachSong.occurrenceCount);
+                SongsAddedToFavorites.push(songWithCount);
+            }
+        }
+
+    }
+console.log(SongsAddedToFavorites);
+}
+
+
+function errorGetSongsFavorites(err){
+console.log(err);
+}
+
+
+function successGetAllSongs(data){
+    AllSongs=data;
+    console.log(AllSongs);
+
+
+}
+
+function errorGetAllSongs(err){
+    console.log(err);
 }
 
 function successGetAllUsers(data){
