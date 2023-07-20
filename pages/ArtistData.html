@@ -36,8 +36,8 @@
             let t = document.getElementById('title');
 
 /*            i.href = Artist.image[1]["#text"];*/
-            p.textContent = "";
-            p.textContent = Artist.bio.summary;
+            p.innerHTML = "";
+            p.innerHTML = Artist.bio.summary;
             t.textContent = "";
             t.textContent = "" + Artist.name;
         }

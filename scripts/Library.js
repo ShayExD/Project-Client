@@ -290,7 +290,7 @@ function successrenderSearchByLyrics(data) {
                 Favbtn.textContent = "Add To Favorite";
                 Favbtn.classList.add('AllButtons');
                 Favbtn.onclick = function () {
-                    AddToFavorite(data[i].id)
+                    AddToFavorite(data[i].id,data[i].artist)
                 }
                 card.appendChild(Favbtn);
             }
@@ -308,7 +308,7 @@ function errorrrenderSearchByLyrics(err) {
 }
 
 
-function AddToFavorite(idSong) {
+function AddToFavorite(idSong,NameOfArtist) {
     let idUser = JSON.parse(localStorage.getItem('logged user')).id;
      const api = `https://localhost:7087/api/Users/addToFavorite?idUser=${idUser}&idSong=${idSong}`
     ajaxCall("POST", api, "", successAddToFavorite, errorAddToFavorite);
