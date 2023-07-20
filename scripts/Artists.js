@@ -11,6 +11,7 @@ function initArtist(){
 }
 
 function successrenderAllartists(ListOfArtists){
+
 console.log(ListOfArtists);
 for (let name of ListOfArtists){
     let artist = name;
