@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/theme.css">
+    <link rel="stylesheet" href="../style/SignUp.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+            crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="/scripts/Login.js"></script>
+
+    <title>Login</title>
+</head>
+<body onload="InitArtist()">
+    <div class="header">
+        <div class="logo"><img src="../images/logo.png"></div>
+    </div>
+    <div class="container">
+        <!--<img id="img"/>-->
+        <h2 id="title">Name:</h2>
+        <hr>
+        <p id="Artist"></p>
+
+
+    </div>
+
+    <script>
+        function InitArtist() {
+            let Artist = JSON.parse(localStorage.getItem('artist'));
+            console.log(Artist)
+
+            //let i = document.getElementById('img');
+            let p = document.getElementById('Artist');
+            let t = document.getElementById('title');
+
+/*            i.href = Artist.image[1]["#text"];*/
+            p.textContent = "";
+            p.textContent = Artist.bio.summary;
+            t.textContent = "";
+            t.textContent = "" + Artist.name;
+        }
+
+        function BackToLibrary() {
+            window.location.href = "Library.html";
+        }
+    </script>
+
+</body>
+</html>
