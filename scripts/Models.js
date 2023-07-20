@@ -6,6 +6,11 @@ const createUser = (id, email, password, username, registrationDate) => ({ id, e
 
 const createSong = (id, artist, SongName, text) => ({ id, artist, SongName, text});
 
+const createSongWithCount = (id, artist, SongName, text, count ) => ({ id, artist, SongName, text,count});
+
+const createUserWithFavorites = (id, email, username, registrationDate,Favorites) => ({ id, email, username, registrationDate,Favorites});
+
+
 function renderHeader() {
     let check = JSON.parse(localStorage.getItem('logged user'))
     console.log(check)

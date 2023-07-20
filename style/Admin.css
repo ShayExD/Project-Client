@@ -1,0 +1,134 @@
+
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+
+
+.selection-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.selection-list li {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px;
+  border: 1px solid transparent;
+}
+
+.selection-list li:hover {
+  background-color: #333;
+  border-radius: 20px;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+/* Custom Spotify colors */
+.users-info {
+  color: #1DB954;
+  border-color: #1DB954;
+}
+
+.songs-info {
+  color: #FFD700;
+  border-color: #FFD700;
+}
+
+.artist-info {
+  color: #1AB7EA;
+  border-color: #1AB7EA;
+}
+
+.containerToTable {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #4d4d4d;
+      border-radius: 10px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+  
+      th, td {
+        padding: 12px;
+        text-align: left;
+        background-color: #3b3b3b;
+        border-bottom: 1px solid #777;
+      }
+
+      tr{
+        background-color: #3b3b3b;
+
+      }
+      .sorting_1{
+        background-color: #3b3b3b;
+
+      }
+  
+      thead {
+        background-color: #1e1e1e;
+      }
+  
+      tbody tr:nth-child(even) {
+        background-color: #444;
+      }
+  
+      tbody tr:hover {
+        background-color: #555;
+      }
+  
+      .dataTables_filter label {
+        color: #fff;
+      }
+
+      table.dataTable.display tbody tr.even>.sorting_1, table.dataTable.order-column.stripe tbody tr.even>.sorting_1 {
+        background-color: #3b3b3b;
+    }
+    table.dataTable.display tbody tr.odd>.sorting_1, table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
+        background-color: #3b3b3b;
+    }
+
+    .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+        color: #bfbfbf;
+    }
+
+      @media (max-width: 600px) {
+        .containerToTable {
+          max-width: 90%;
+          padding: 10px;
+        }
+
+        #WrapDiv{
+            max-width: 90%;
+        }
+      
+        table {
+          margin-top: 10px;
+        }
+      
+        th, td {
+          padding: 8px;
+          font-size: 14px;
+        }
+      }
+
+     

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/theme.css">
+    <link rel="stylesheet" href="../style/Menu.css">
+    <link rel="stylesheet" href="../style/Home.css">
+    <script src="../scripts/ajaxCalls.js"></script>
+    <script src="../scripts/Models.js"></script>
+    <script src="../scripts/Admin.js"></script>
+    <script>
+        function toggleMenu() {
+            var menuItems = document.querySelector('.menu-items');
+            menuItems.classList.toggle('show-menu');
+        }
+    </script>
+    <title>Admin</title>
+    <script src="../scripts/Home.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Include DataTables JS -->
+    <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+
+    <!-- Include DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../style/Admin.css">
+
+</head>
+<body onload="initAdmin()">
+    <div id="Homeheader" class="header">
+        <div class="logo"><img src="../images/logo.png"></div>
+        <ul id="ul" class="menu-items">
+            <li><a href="Home.html">Home</a></li>
+            <!--<li><a href="Login.html">Login</a></li>
+            <li><a href="SignUp.html">Sign Up</a></li>
+            <li><a href="Library.html">Library</a></li>-->
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="container">
+        <ul class="selection-list">
+          <li onclick="usersInformation()" class="users-info"><i class="icon fas fa-user"></i>Users Information</li>
+          <li onclick="songsInformation()" class="songs-info"><i class="icon fas fa-music"></i>Songs Information</li>
+          <li onclick="artistsInformation()"class="artist-info"><i class="icon fas fa-microphone-alt"></i>Artists Information</li>
+        </ul>
+      </div>
+    <div id="WrapDiv"></div>
+
+
+
+</body>
+</html>
