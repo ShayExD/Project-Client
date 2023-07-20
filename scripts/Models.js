@@ -10,6 +10,7 @@ const createSongWithCount = (id, artist, SongName, text, count ) => ({ id, artis
 
 const createUserWithFavorites = (id, email, username, registrationDate,Favorites) => ({ id, email, username, registrationDate,Favorites});
 
+const createArtistWithCount = (artistName,count) => ({ artistName,count});
 
 function renderHeader() {
     let check = JSON.parse(localStorage.getItem('logged user'))
