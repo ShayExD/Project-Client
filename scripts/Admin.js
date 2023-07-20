@@ -28,9 +28,6 @@ let FullDetailsArtists=[];
 ///---------------General Section--------------------
 
 
-function initTable(){
-}
-
 function initInformation(){
     const apiUsers = `https://localhost:7087/api/Users/getAllUsers`;
     ajaxCall("GET", apiUsers, "", successGetAllUsers, errorGetAllUsers);
@@ -51,7 +48,6 @@ function initInformation(){
 
 function initAdmin(){
     init();
-    initTable();
     initInformation();
 }
     
@@ -201,6 +197,7 @@ function artistsInformation(){
 
 
 }
+
 function BuildObjectArtistsWithCount(){
     FullDetailsArtists=[];
     for(let eachArtist of ArtistsAndCounts ){
@@ -214,16 +211,20 @@ function BuildObjectArtistsWithCount(){
     }
     console.log(FullDetailsArtists);
 }
+
 function successGetAllArtists(data){
     AllArtists=data;
 }
+
 function errorGetAllArtists(err){
     console.log(err);
 }
+
 function successGetAllArtistsCount(data){
     ArtistsAndCounts=data;
     console.log(ArtistsAndCounts);
 }
+
 function errorGetAllArtistsCount(err){
     console.log(err);
 }
