@@ -165,6 +165,15 @@ height: 150px;
         }
 
     .menu-icon {
+        position:relative;
+        margin-right:auto;
+        margin-left:20px;
         display: block;
+/*        margin-left: 100px;
+        margin-bottom: 100px;*/
+}
+
+    .menu menu-items show-menu{
+        margin-top:200px;
     }
 }
