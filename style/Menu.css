@@ -53,31 +53,118 @@ height: 150px;
 }
 
 /* Media query for responsive design */
-@media screen and (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+/*@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-  .logo {
-    margin: auto;
-  }
+    .logo {
+        margin: auto;
+    }
 
-  .menu-items {
-    display: none;
-  }
+    .menu-items {
+        display: none;
+    }
 
-  .hamburger {
-    margin-left: 10px;
-    margin-bottom: 10px;
+    .hamburger {
+        margin-left: 10px;
+        margin-bottom: 10px;
+        display: block;
+        cursor: pointer;
+    }
 
-    display: block;
-  }
+    .show-menu .menu-items {
+        display: block;
+    }
+    .menu-items li {
+        display: block;
+    }
+}
+*/
 
-  .show-menu .menu-items {
-    display: block;
-  }
+    @media screen and (max-width: 768px) {
+        .user {
+            display: none;
+            /*flex-direction: column;
+            align-items: flex-end;
+            position: absolute;
+            right: 2px;
+            top: 120px;*/
+        }
+    }
+
+    /******************************************************************/
+
+/*header {
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}*/
+/*
+.navbar {
+    display: flex;
+    align-items: center;
+}*/
+
+/*
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
+    .menu li {
+        padding: 0 10px;
+    }
 
+    .menu a {
+        color: #fff;
+        text-decoration: none;
+    }*/
 
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background-color: #333;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+        .menu li {
+            padding: 5px;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .menu.show-menu {
+            display: flex;
+        }
+
+    .menu-icon {
+        display: block;
+    }
+}

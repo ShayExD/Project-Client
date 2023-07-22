@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Quiz Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="../scripts/game.js"></script>
+    <link href="../style/game.css" rel="stylesheet" />
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="path_to_your_logo.png" alt="Logo">
+            </div>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="menu">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <h1>Artist Quiz Game</h1>
+        <div id="gameContainer">
+            <div class="question-box">
+                <p id="question">Press Start to play!</p>
+                <input type="text" id="userAnswer" placeholder="Enter your answer...">
+                <button id="startBtn">Start</button>
+                <button id="submitBtn">Submit</button>
+            </div>
+            <div class="result-box" id="resultBox">
+                <p id="result"></p>
+                <button id="nextBtn">Next</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
