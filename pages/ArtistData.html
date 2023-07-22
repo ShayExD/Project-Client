@@ -18,7 +18,7 @@
         <div class="logo"><img src="../images/logo.png"></div>
     </div>
     <div class="container">
-        <!--<img id="img"/>-->
+        <img id="ArtistImg"/>
         <h2 id="title">Name:</h2>
         <hr>
         <p id="Artist"></p>
@@ -29,13 +29,14 @@
     <script>
         function InitArtist() {
             let Artist = JSON.parse(localStorage.getItem('artist'));
-            console.log(Artist)
-
-            //let i = document.getElementById('img');
+            let ImgSrc = localStorage.getItem('artistImg');
+            console.log(ImgSrc);
+            let Img = document.getElementById('ArtistImg');
+            Img.src = ImgSrc
+   
             let p = document.getElementById('Artist');
             let t = document.getElementById('title');
 
-/*            i.href = Artist.image[1]["#text"];*/
             p.innerHTML = "";
             p.innerHTML = Artist.bio.summary;
             t.textContent = "";

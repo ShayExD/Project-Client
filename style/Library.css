@@ -134,3 +134,9 @@
   .card:hover .lyrics-box {
     display: block; /* Show lyrics box on hover */
   }
+
+.artistImgs {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+}

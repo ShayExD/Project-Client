@@ -6,8 +6,10 @@ const createUser = (id, email, password, username, registrationDate) => ({ id, e
 
 const createSong = (id, artist, SongName, text) => ({ id, artist, SongName, text});
 
+//שיר עם כמה שמופיע במועדפים
 const createSongWithCount = (id, artist, SongName, text, count ) => ({ id, artist, SongName, text,count});
 
+//יוזר והשירים הפייבוריטים שלו
 const createUserWithFavorites = (id, email, username, registrationDate,Favorites) => ({ id, email, username, registrationDate,Favorites});
 
 const createArtistWithCount = (artistName,count) => ({ artistName,count});
