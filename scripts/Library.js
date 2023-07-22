@@ -212,7 +212,6 @@ function successrenderSearchAllSongs(data) {
         card.appendChild(lyricsBox);
 
         let check = JSON.parse(localStorage.getItem('logged user'))
-        console.log(check)
 
         if (check != null) {
             if (check.email != "") { 
