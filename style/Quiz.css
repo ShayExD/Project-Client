@@ -1,0 +1,95 @@
+#quiz-container {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 200px;
+    padding-top: 50px;
+    background-color: #1a1919;
+
+  }
+
+  #question-container {
+    margin: auto;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #3a3a3a;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  }
+
+  #quiz-header {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #1DB954;
+    margin:auto;
+    margin-bottom: 30px;
+  }
+
+
+  #question-container h2 {
+    font-size: 24px;
+    margin: 0 0 20px;
+    color: #1DB954;
+  }
+
+  #question-container ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  #question-container li {
+    margin-bottom: 10px;
+  }
+
+  #question-container button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #1d1d1d;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  #question-container button.correct {
+    background-color: #1DB954;
+    color: #ffffff;
+  }
+
+  #question-container button.incorrect {
+    background-color: #ff3333;
+    color: #ffffff;
+  }
+
+  #question-container button:hover {
+  }
+
+  #question-container button:focus {
+    outline: none;
+  }
+
+  /* Responsive styling for phone state */
+
+  @media screen and (max-width: 600px) {
+    #question-container {
+      max-width: 90%;
+      padding: 10px;
+    }
+
+    #question-container h2 {
+      font-size: 20px;
+    }
+
+    #question-container li {
+      margin-bottom: 8px;
+    }
+
+    #question-container button {
+      padding: 8px;
+      font-size: 14px;
+    }
+  }

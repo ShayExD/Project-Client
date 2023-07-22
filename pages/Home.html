@@ -7,10 +7,13 @@
     <link rel="stylesheet" href="../style/Menu.css">
     <link rel="stylesheet" href="../style/carousle.css">
     <link rel="stylesheet" href="../style/Home.css">
+    <link rel="stylesheet" href="../style/Quiz.css">
+
 
 
     <script src="../scripts/ajaxCalls.js"></script>
     <script src="../scripts/Models.js"></script>
+    <script defer="1" src="../scripts/Quiz.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
             integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
@@ -62,9 +65,6 @@
         </nav>
     </header>
 
-
-
-
     <div class="middle">
         <div class="container">
             <div class="carousel">
@@ -81,6 +81,11 @@
             <div class="next">Next</div>
         </div>
     </div>
+    <div id="quiz-container">
+      <div id="quiz-header">Artists Quiz</div>
+      <div id="question-container"></div>
+    </div>
+
     <script>
         var carousel = $(".carousel"),
             currdeg = 0;
