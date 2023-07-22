@@ -48,15 +48,36 @@ for (let name of ListOfArtists){
                 nameElement.textContent = response.artist.name;
                 card.appendChild(nameElement);
 
-                const lyricsBox = document.createElement('button');
-                lyricsBox.textContent = "click for Data";
-                lyricsBox.classList.add('AllButtons');
-                lyricsBox.onclick = function () {
+
+				const pListeners = document.createElement('p');
+                pListeners.textContent = "Listeners: "+response.artist.stats.listeners;
+                card.appendChild(pListeners);
+
+				const pPlayCount = document.createElement('p');
+                pPlayCount.textContent = "Play Count: "+response.artist.stats.playcount;
+                card.appendChild(pPlayCount);
+
+				const pGeneres = document.createElement('p');
+				pGeneres.style.color="white";
+				pGeneres.style.marginTop="5px";
+				let pTagString="Tags : ";
+				for(let tag of response.artist.tags.tag){
+					pTagString += tag.name+" ,";
+				}
+				pTagString=pTagString.slice(0, -1);
+                pGeneres.textContent = pTagString;
+                card.appendChild(pGeneres);
+
+
+                const MoreInfo = document.createElement('button');
+                MoreInfo.textContent = "More Info";
+                MoreInfo.classList.add('AllButtons');
+                MoreInfo.onclick = function () {
                     window.open("ArtistData.html", "_blank");
 					localStorage.setItem("artist", JSON.stringify(response.artist));
 					localStorage.setItem("artistImg", img.src);
                 }
-                card.appendChild(lyricsBox);
+                card.appendChild(MoreInfo);
                 cardContainer.appendChild(card);
             
         },
