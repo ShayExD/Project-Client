@@ -1,5 +1,6 @@
 body {
     background-color: #191414;
+    font-family: Arial, sans-serif;
 }
 
 .user {
@@ -29,4 +30,8 @@ a{
 a:hover {
     color:#1db954;
 
+}
+
+.AllButtons:hover{
+    color:#000000;
 }

@@ -66,7 +66,7 @@ function renderHeader() {
 
             const li7 = document.createElement('li');
             const a7 = document.createElement('a');
-            a7.textContent = "Admin";
+            a7.textContent = "Interface Admin";
             a7.href = "Admin.html";
             li7.appendChild(a7);
             ul.appendChild(li7);
@@ -114,10 +114,10 @@ function renderRightHeader() {
     DivUser.className = "user";
     let pUser = document.createElement('p');
     pUser.className = "email";
-    pUser.innerHTML = "User's email: <br>" + JSON.parse(localStorage.getItem('logged user')).email;
+    pUser.innerHTML = "User Name: " + JSON.parse(localStorage.getItem('logged user')).username;
     DivUser.appendChild(pUser);
     let aLogout = document.createElement('a');
-    aLogout.className = "logout";
+    aLogout.className = "AllButtons";
     aLogout.textContent = "logout";
     aLogout.href = "Home.html";
     aLogout.onclick = function () {

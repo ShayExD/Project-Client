@@ -66,7 +66,13 @@
 
   @media only screen and (max-width: 600px) {
     .search-container {
-      width: 100%;
+      width: 95%;
+      margin-top: 100px;
+    }
+
+    .card-container.artistsCardContainers{
+      margin-top: 100px;
+
     }
 
     .search-container input[type="text"],

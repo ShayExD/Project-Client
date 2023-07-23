@@ -63,7 +63,6 @@
   cursor: pointer;
   background: #282828;
   border-radius: 5px;
-  box-shadow: 0 5px 0 ;
   transition: box-shadow 0.1s, top 0.1s;
 }
 .next:hover, .prev:hover { color: #1DB954; }
@@ -72,3 +71,28 @@
 }
 .next { right: 5em; }
 .prev { left: 5em; }
+
+.middle{
+  margin-top: 110px;
+
+}
+
+.buttons {
+  margin-top: 55px;
+
+}
+
+
+@media screen and (max-width: 768px) {
+.middle {
+  display: block;
+  margin-top: 230px;
+}
+
+
+.buttons {
+  margin-top: 55px;
+
+}
+
+}

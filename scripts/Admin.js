@@ -10,6 +10,7 @@ let AllFavorites=[];
 let AllUsers=[];
 let AllUsersWithFavoritesSongs=[];
 
+
 ////Songs Global Variables
 let SongsAddedToFavorites=[];
 let AllSongs=[];
@@ -28,7 +29,7 @@ let FullDetailsArtists=[];
 ///---------------General Section--------------------
 
 
-function initInformation(){
+async function initInformation(){
     const apiUsers = `https://localhost:7087/api/Users/getAllUsers`;
     ajaxCall("GET", apiUsers, "", successGetAllUsers, errorGetAllUsers);
 
@@ -44,11 +45,18 @@ function initInformation(){
     const apiArtistsCount = `https://localhost:7087/api/Song/getArtistCountInFavorite`;
     ajaxCall("GET", apiArtistsCount, "", successGetAllArtistsCount, errorGetAllArtistsCount);
 
+    await wait(2500);
 }
 
-function initAdmin(){
+function wait(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+
+async function initAdmin(){
     init();
-    initInformation();
+    await initInformation();
+    defineOnClicks();
 }
     
 function clearDivTable(Title){
@@ -61,6 +69,16 @@ function clearDivTable(Title){
         divTableContainer.innerHTML+=`<div id="userDataTableContainer"></div>`;
         WrapDiv.appendChild(divTableContainer);
         
+}
+
+function defineOnClicks(){
+    let liUsers=document.getElementById('users-infoID');
+    console.log(liUsers);
+    liUsers.onclick= usersInformation;
+    let liSongs=document.getElementById('songs-infoID');
+    liSongs.onclick= songsInformation;
+    let liArtists=document.getElementById('artist-infoID');
+    liArtists.onclick= artistsInformation;
 }
 
 
@@ -143,27 +161,40 @@ function usersInformation(){
     
 }
 
- function successGetAllUsers(data){
+  function successGetAllUsers(data){
     for(user of data){
-        const api = `https://localhost:7087/api/Users/userFavoriteSongs?idUser=${user.id}`;
+       const api = `https://localhost:7087/api/Users/userFavoriteSongs?idUser=${user.id}`;
         ajaxCall("GET", api, "", successGetFavoriteSongs, errorGetFavoriteSongs);
     }
-    console.log(data);
     AllUsers=data;
+    console.log(AllUsersWithFavoritesSongs);
+}
+
+ function successGetFavoriteSongs(DicFavSongs){
+    console.log(DicFavSongs);
+    let ListOfSongs=null;
+    let ListOfNameSongs=[];
+    let CorrectUser;
+    for(let user of AllUsers){
+        if(ListOfSongs!=null){
+            break;
+        }
+        else{
+            ListOfSongs= DicFavSongs[user.id];
+            CorrectUser=user;
+            console.log(CorrectUser);
+        }
+    }
+    for(let song of ListOfSongs){
+        ListOfNameSongs.push(song.songName);
+    }
+    let UserFavorite= createUserWithFavorites(CorrectUser.id,CorrectUser.email,CorrectUser.username,CorrectUser.registrationdate,ListOfNameSongs);
+    AllUsersWithFavoritesSongs.push(UserFavorite);
     console.log(AllUsersWithFavoritesSongs);
 
 }
 
- function successGetFavoriteSongs(FavSongs){
-    let ListOfNameSongs=[];
-    for(let Song of FavSongs){
-        ListOfNameSongs.push(Song.songName);
-    }
-    let UserFavorite= createUserWithFavorites(AllUsers[count].id,AllUsers[count].email,AllUsers[count].username,AllUsers[count].registrationdate,ListOfNameSongs);
-    AllUsersWithFavoritesSongs.push(UserFavorite);
-    count++;
 
-}
 
 function errorGetFavoriteSongs(err){
     console.log(err);
