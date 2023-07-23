@@ -12,8 +12,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="../scripts/ajaxCalls.js"></script>
     <script src="../scripts/test.js"></script>
+    <link href="../style/Menu.css" rel="stylesheet" />
+
 </head>
 <body onload="init()">
+
+    <header>
+        <nav id="Homeheader" class="header navbar">
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="logo"><img src="../images/logo.png"></div>
+
+            <ul id="ul" class="menu menu-items">
+                <li><a href="Home.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <img id="img" />
     <!--<header>
         <nav class="navbar">
@@ -33,8 +51,6 @@
             </ul>
         </nav>
     </header>-->
-
-
     <!--<div class="container">
         <h1>Artist Quiz Game</h1>
         <div id="gameContainer">

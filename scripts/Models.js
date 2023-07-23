@@ -19,7 +19,7 @@ function renderHeader() {
     console.log(check)
     const ul = document.getElementById("ul");
     if (check != null) {
-        if (check.email != "") {
+        if (check.email != "admin@gmail.com") {
             const li4 = document.createElement('li');
             const a4 = document.createElement('a');
             a4.textContent = "Library";
@@ -40,7 +40,37 @@ function renderHeader() {
             a6.href = "Artists.html";
             li6.appendChild(a6);
             ul.appendChild(li6);
-            }
+        }
+        else {
+            const li4 = document.createElement('li');
+            const a4 = document.createElement('a');
+            a4.textContent = "Library";
+            a4.href = "Library.html";
+            li4.appendChild(a4);
+            ul.appendChild(li4);
+
+            const li5 = document.createElement('li');
+            const a5 = document.createElement('a');
+            a5.textContent = "Favorites";
+            a5.href = "Favorites.html";
+            li5.appendChild(a5);
+            ul.appendChild(li5);
+
+            const li6 = document.createElement('li');
+            const a6 = document.createElement('a');
+            a6.textContent = "Artists";
+            a6.href = "Artists.html";
+            li6.appendChild(a6);
+            ul.appendChild(li6);
+
+
+            const li7 = document.createElement('li');
+            const a7 = document.createElement('a');
+            a7.textContent = "Admin";
+            a7.href = "Admin.html";
+            li7.appendChild(a7);
+            ul.appendChild(li7);
+        }
     }
     else {
         const ul = document.getElementById("ul");
