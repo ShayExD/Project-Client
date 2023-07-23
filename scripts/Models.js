@@ -168,7 +168,7 @@ let SongName;
 let ArtistName;
 function renderSendToYouTube(SongNameFromLibraryJS, ArtistNameFromLibraryJS) {
     SongName = SongNameFromLibraryJS + " " + ArtistNameFromLibraryJS;
-    const ApiKey = 'AIzaSyDkTyAGAo5-OEvE8-kLh6ryO9aFq-y2We4';
+    const ApiKey = 'AIzaSyDU8u0K0sYywLflfJenOOSWf1iIIrd68Z0';
     const api = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(SongName)}&type=video&key=${ApiKey}`
     ajaxCall("GET", api, "", successrenderSendToYouTube, errorrenderSendToYouTube);
     return false;
