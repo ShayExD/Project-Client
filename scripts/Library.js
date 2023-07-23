@@ -33,7 +33,6 @@ function renderSearchByArtist()
 {
     let searchBar = document.getElementById("searchBar");
     let inputInSearchBar = searchBar.value;
-    alert(inputInSearchBar);
     const api = `https://localhost:7087/api/Song/getSongsByArtist?artist=${inputInSearchBar}`
     ajaxCall("GET", api, "", successrenderSearchByArtist, errorrenderSearchByArtist);
     return false;
@@ -102,7 +101,6 @@ function errorrenderSearchByArtist(err) {
 function renderSearchBySongsName() {
     let searchBar = document.getElementById("searchBar");
     let inputInSearchBar = searchBar.value;
-    alert(inputInSearchBar);
     const api = `https://localhost:7087/api/Song/getSongsBySongName?songName=${inputInSearchBar}`
     ajaxCall("GET", api, "", successrenderSearchBySongsName, errorrrenderSearchBySongsName);
     return false;
@@ -173,7 +171,6 @@ function errorrrenderSearchBySongsName(err) {
 function renderSearchAllSongs() {
     let searchBar = document.getElementById("searchBar");
     let inputInSearchBar = searchBar.value;
-    alert(inputInSearchBar);
     const api = `https://localhost:7087/api/Song/GetAllSongs`
     ajaxCall("GET", api, "", successrenderSearchAllSongs, errorrenderSearchAllSongs);
     return false;

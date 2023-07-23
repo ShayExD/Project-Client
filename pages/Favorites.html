@@ -19,27 +19,32 @@
             menuItems.classList.toggle('show-menu');
         }
     </script>
-    <title>Home</title>
+    <title>Favorites</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="../scripts/Favorites.js"></script>
     <link href="../style/Favorites.css" rel="stylesheet" />
     <script src="../scripts/Models.js"></script>
 </head>
 <body onload="init()">
-    <div id="Homeheader" class="header">
-        <div class="logo"><img src="../images/logo.png"></div>
-        <ul id="ul" class="menu-items">
-            <li><a href="Home.html">Home</a></li>
-            <!--<li><a href="Library.html">Library</a></li>
-            <li><a href="Favorite.html">Favorites</a></li>-->
-        </ul>
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-    <div id="cardContainer" class="card-container">
+    <header>
+        <nav id="Homeheader" class="header navbar">
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="logo"><img src="../images/logo.png"></div>
+
+            <ul id="ul" class="menu menu-items">
+                <li><a href="Home.html">Home</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <div style="text-align: center; color:white"><h1>Favorites</h1></div>
+
+    <div id="cardContainer" class="card-container ">
 
 
 
