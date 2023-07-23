@@ -94,6 +94,8 @@ function successrenderSearchByArtist(data) {
 }
 
 function errorrenderSearchByArtist(err) {
+    const cardContainer = document.getElementById('cardContainer');
+    cardContainer.innerHTML = "";
     swal("Something wrong", "try again", "error");
 }
 
@@ -164,6 +166,8 @@ function successrenderSearchBySongsName(data) {
 }
 
 function errorrrenderSearchBySongsName(err) {
+    const cardContainer = document.getElementById('cardContainer');
+    cardContainer.innerHTML = "";
     swal("Something wrong", "try again", "error");
 }
 
@@ -233,6 +237,8 @@ function successrenderSearchAllSongs(data) {
 }
 
 function errorrenderSearchAllSongs(err) {
+    const cardContainer = document.getElementById('cardContainer');
+    cardContainer.innerHTML = "";
     swal("Something wrong", "try again", "error");
 }
 
@@ -303,6 +309,8 @@ function successrenderSearchByLyrics(data) {
 }
 
 function errorrrenderSearchByLyrics(err) {
+    const cardContainer = document.getElementById('cardContainer');
+    cardContainer.innerHTML = "";
     swal("Something wrong", "try again", "error");
 }
 
