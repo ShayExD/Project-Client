@@ -17,7 +17,7 @@
     <div class="header">
         <div class="logo"><img src="../images/logo.png"></div>
     </div>
-    <div class="container">
+    <div id='DivDataArtist' class="container">
         <img id="ArtistImg"/>
         <h2 id="title">Name:</h2>
         <hr>
@@ -28,6 +28,8 @@
 
     <script>
         function InitArtist() {
+            let Div=document.getElementById('DivDataArtist');
+
             let Artist = JSON.parse(localStorage.getItem('artist'));
             let ImgSrc = localStorage.getItem('artistImg');
             console.log(ImgSrc);
@@ -41,6 +43,15 @@
             p.innerHTML = Artist.bio.summary;
             t.textContent = "";
             t.textContent = "" + Artist.name;
+
+            let ButtonBackHome = document.createElement("button");
+            ButtonBackHome.className = "AllButtons";
+            ButtonBackHome.textContent='Back';
+            ButtonBackHome.onclick= function(){
+            window.location.href = "Artists.html";
+            }
+            Div.appendChild(ButtonBackHome);
+
         }
 
         function BackToLibrary() {

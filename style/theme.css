@@ -44,8 +44,8 @@ a:hover {
     color:#000000;
 }
 
-.SongImg {
+#idSongImg.SongImg {
     width: 200px;
-    height: 100px;
+    height: 200px;
     border-radius: 8px;
 }

@@ -19,8 +19,8 @@
 <div class="header">
     <div class="logo"><img src="../images/logo.png"></div>
 </div>
-  <div class="container">
-      <img id="SongImg" class="SongImg" />
+  <div id="DivLyrics" class="container">
+      <img id="idSongImg" class="SongImg" />
     <h2 id="title">Lyrics</h2>
     <hr>
     <p id="Lyrics"></p>
@@ -30,6 +30,13 @@
 
   <script>
 function InitLyrics(){
+    let Div=document.getElementById('DivLyrics');
+    let ButtonBackHome = document.createElement("button");
+    ButtonBackHome.className = "AllButtons";
+    ButtonBackHome.textContent='Back To Home';
+    ButtonBackHome.onclick= function(){
+      window.open("Home.html", "_blank");
+    }
     let Song = JSON.parse(localStorage.getItem('lyrics'));
     let p=document.getElementById('Lyrics');
     let t=document.getElementById('title');
@@ -37,6 +44,7 @@ function InitLyrics(){
     p.textContent=Song.lyrics;
     t.textContent="";
     t.textContent = "Lyrics of " + Song.songName;
+    Div.appendChild(ButtonBackHome);
     renderSongImg()
 }
 

@@ -28,7 +28,7 @@ function successrenderSongImg(data) {
     }
     console.log(songInfo);
     console.log(songInfo[0].thumbnail);
-    let img = document.getElementById("SongImg");
+    let img = document.getElementById("idSongImg");
     img.src = songInfo[0].thumbnail;
 }
 
