@@ -11,7 +11,18 @@
     overflow: auto;
   }
 
+  #dynamic-title{
+    font-size: 70px
+
+  }
 
 
+  @media screen and (max-width: 600px) {
 
-  
+#dynamic-title{
+  font-size: 45px;
+  margin-top: 115px;
+
+}
+
+  }
