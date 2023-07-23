@@ -61,16 +61,23 @@ function renderCards(data,flag){
         artistElement.textContent = `Artist: ${data[i].artist}`;
         card.appendChild(artistElement);
 
-
-
-        const lyricsBox = document.createElement('button');
-        lyricsBox.textContent = "click for lyrics";
+        const lyricsBox = document.createElement("button");
+        lyricsBox.className = "AllButtons";
         lyricsBox.id='lyricButton';
-        lyricsBox.classList.add('AllButtons');
+
+        // Create the lyrics icon element using Font Awesome
+        const lyricsIcon = document.createElement("i");
+        lyricsIcon.className = "fas fa-music";
         lyricsBox.onclick = function () {
             window.open("lyrics.html", "_blank");
             localStorage.setItem("lyrics", JSON.stringify(data[i]));
         }
+        // Create the text for the button
+        const lyricsText = document.createTextNode("Lyrics");
+
+        // Append the icon and text to the button
+        lyricsBox.appendChild(lyricsIcon);
+        lyricsBox.appendChild(lyricsText);
         card.appendChild(lyricsBox);
 
 
@@ -92,14 +99,20 @@ function renderCards(data,flag){
         if (UserFromLocal != null) {
             if (UserFromLocal.email != "") { 
                 if(!flag){
-            const Favbtn = document.createElement('button');
-            Favbtn.textContent = "Add To Favorite";
-            Favbtn.id='FavoriteButton';
-            Favbtn.classList.add('AllButtons');
-            Favbtn.onclick = function () {
-                AddToFavorite(data[i].id)
-            }
-                card.appendChild(Favbtn);
+                    const Favbtn = document.createElement("button");
+                    Favbtn.className = "AllButtons";
+                    Favbtn.onclick = function () {
+                        AddToFavorite(data[i].id)
+                    }
+                    const icon = document.createElement("i");
+                    icon.className = "fas fa-star";
+              
+                    const buttonText = document.createTextNode("Add to Favorite");
+              
+                    Favbtn.appendChild(icon);
+                    Favbtn.appendChild(buttonText);
+                    Favbtn.id='FavoriteButton';
+                     card.appendChild(Favbtn);
             }
             else{
                 const Favbtn = document.createElement('button');

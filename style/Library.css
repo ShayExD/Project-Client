@@ -154,3 +154,11 @@
 #FavoriteButton{
   background-color: #581480;
 }
+
+#LastFmButton{
+  background-color: #581480;
+}
+
+.AllButtons i {
+  margin-right: 8px;
+}

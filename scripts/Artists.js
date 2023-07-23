@@ -68,6 +68,16 @@ for (let name of ListOfArtists){
                 pGeneres.textContent = pTagString;
                 card.appendChild(pGeneres);
 
+				const LastFmLink = document.createElement('button');
+                LastFmLink.textContent = "To Last.Fm";
+				LastFmLink.id = "LastFmButton";
+                LastFmLink.classList.add('AllButtons');
+                LastFmLink.onclick = function () {
+                    window.open(response.artist.url, "_blank");
+					
+                }
+                card.appendChild(LastFmLink);
+
 
                 const MoreInfo = document.createElement('button');
                 MoreInfo.textContent = "More Info";
