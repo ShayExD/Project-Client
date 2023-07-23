@@ -3,7 +3,7 @@ const apiKey = '35a874403974c410da6243eed29981c4';
 
 function init() {
 
-    renderSearchByArtist()
+    renderSendToYouTube()
 }
 
 function toggleMenu() {
@@ -78,19 +78,64 @@ function getSongImage(songName) {
         });
 }
 
-function renderSearchByArtist() {
-    let SongName = "leves";
+
+let SongName;
+let ArtistName;
+function renderSendToYouTube(SongName, ArtistName) {
+    SongName = "fever aerosmith" + " " + ArtistName;
+
     const ApiKey = 'AIzaSyDkTyAGAo5-OEvE8-kLh6ryO9aFq-y2We4';
-    const api = ` https://www.googleapis.com/youtube/v3/search?part=snippet&q=${SongName}&type=video&key=${ApiKey}`
-    ajaxCall("GET", api, "", successrenderSearchByArtist, errorrenderSearchByArtist);
+    const api = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(SongName)}&type=video&key=${ApiKey}`
+    ajaxCall("GET", api, "", successrenderSendToYouTube, errorrenderSendToYouTube);
     return false;
 }
 
-function successrenderSearchByArtist(data) {
-    console.log(data);
+function successrenderSendToYouTube(data) {
+
+    const songInfo = [];
+    for (const item of data.items) {
+        if (item.id.kind === 'youtube#video') {
+
+                const videoTitle = item.snippet.title;
+                const artistName = videoTitle.split(' - ')[0];
+                const videoId = item.id.videoId;
+                const videoThumbnail = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+                const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+
+            songInfo.push({ title: videoTitle, thumbnail: videoThumbnail, url: videoUrl, artist: artistName });
+            }
+
+    }
+    console.log(songInfo);
+    //console.log(songInfo[0].thumbnail);
+    /*  window.open(songInfo[0].url, "_blank");*/
+
 }
 
-function errorrenderSearchByArtist(err) {
 
+
+
+
+function errorrenderSendToYouTube(err) {
     alert("problem");
 }
+
+
+
+
+//function getSongUrl(songName, apiKey) {
+//    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(songName)}&type=video&key=${apiKey}`;
+
+//    return fetch(url)
+//        .then(response => response.json())
+//        .then(data => {
+//            const songUrls = [];
+//            data.items.forEach(item => {
+//                if (item.id.kind === 'youtube#video') {
+//                    const videoId = item.id.videoId;
+//                    songUrls.push(`https://www.youtube.com/watch?v=${videoId}`);
+//                }
+//            });
+//            return songUrls;
+//        });
+//}

@@ -130,3 +130,72 @@ function renderRightHeader() {
 
 
 
+//הפניית השיר ליוטיוב
+//function renderSendToYouTube(SongName) {
+//    /*    let SongName = "Avicii - Levels - YouTube";*/
+//    const ApiKey = 'AIzaSyDkTyAGAo5-OEvE8-kLh6ryO9aFq-y2We4';
+//    const api = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(SongName)}&type=video&key=${ApiKey}`
+//    ajaxCall("GET", api, "", successrenderSendToYouTube, errorrenderSendToYouTube);
+//    return false;
+//}
+
+//function successrenderSendToYouTube(data) {
+//    console.log(data);
+//    const songInfo = [];
+//    for (const item of data.items) {
+//        if (item.id.kind === 'youtube#video') {
+//            const videoId = item.id.videoId;
+//            const videoTitle = item.snippet.title;
+//            const videoThumbnail = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+//            const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+
+//            songInfo.push({ title: videoTitle, thumbnail: videoThumbnail, url: videoUrl });
+//        }
+//    }
+//    console.log(songInfo[0].url);
+
+//    window.open(songInfo[0].url, "_blank");
+
+//}
+
+//function errorrenderSendToYouTube(err) {
+//    alert("problem");
+//}
+
+/////////////////////////////////////////////////////////
+
+let SongName;
+let ArtistName;
+function renderSendToYouTube(SongNameFromLibraryJS, ArtistNameFromLibraryJS) {
+    SongName = SongNameFromLibraryJS + " " + ArtistNameFromLibraryJS;
+    const ApiKey = 'AIzaSyDkTyAGAo5-OEvE8-kLh6ryO9aFq-y2We4';
+    const api = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(SongName)}&type=video&key=${ApiKey}`
+    ajaxCall("GET", api, "", successrenderSendToYouTube, errorrenderSendToYouTube);
+    return false;
+}
+
+function successrenderSendToYouTube(data) {
+
+    const songInfo = [];
+    for (const item of data.items) {
+        if (item.id.kind === 'youtube#video') {
+            const videoTitle = item.snippet.title;
+            const artistName = videoTitle.split(' - ')[0];
+            console.log(ArtistName + " " + artistName);
+            const videoId = item.id.videoId;
+            const videoThumbnail = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+            const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+            songInfo.push({ title: videoTitle, thumbnail: videoThumbnail, url: videoUrl });
+            }
+
+        }
+    
+    console.log(songInfo);
+    console.log(songInfo[0].thumbnail);
+    window.open(songInfo[0].url, "_blank");
+
+}
+
+function errorrenderSendToYouTube(err) {
+    alert("problem");
+}
