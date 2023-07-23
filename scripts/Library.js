@@ -33,7 +33,9 @@ function search() {
 
 function renderCards(data,flag){
     const cardContainer = document.getElementById('cardContainer');
+    console.log(cardContainer);
     cardContainer.innerHTML = "";
+    console.log("check");
 
     for (let i = 0; i < data.length; i++) {
 

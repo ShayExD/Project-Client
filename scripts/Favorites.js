@@ -1,5 +1,5 @@
 ﻿
-function init() {
+function initFavorite() {
     renderHeader();
     renderRightHeader();
     renderFavoriteSongs()
@@ -14,7 +14,7 @@ function renderFavoriteSongs() {
 
 function successrenderFavoriteSongs(data) {
     console.log(data);
-    renderCards(data,true);
+    renderCards(data[JSON.parse(localStorage.getItem('logged user')).id],true);
 
 }
 

@@ -154,15 +154,3 @@
 #FavoriteButton{
   background-color: #581480;
 }
-
-.youtube-button {
-  background-color: #FF0000; /* YouTube red color */
-  color: #FFFFFF; /* White text color */
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-}
