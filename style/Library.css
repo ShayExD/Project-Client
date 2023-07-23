@@ -142,9 +142,9 @@
   }
 
 .artistImgs {
-    width: 100px;
-    height: 100px;
-    border-radius: 8px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
 }
 
 #YouTubeButton{
