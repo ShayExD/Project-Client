@@ -43,3 +43,9 @@ a:hover {
 .AllButtons:hover{
     color:#000000;
 }
+
+.SongImg {
+    width: 200px;
+    height: 100px;
+    border-radius: 8px;
+}
