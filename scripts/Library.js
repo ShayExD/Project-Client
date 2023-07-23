@@ -30,6 +30,13 @@ function search() {
 
 }
 
+function createPlayIcon(size) {
+    const svgCode = `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="#244dbe">
+                      <path d="M8 5v14l11-7z"></path>
+                     </svg>`;
+    return svgCode;
+  }
+
 
 function renderCards(data,flag){
     const cardContainer = document.getElementById('cardContainer');
@@ -42,6 +49,14 @@ function renderCards(data,flag){
         const card = document.createElement('div');
         card.classList.add('card');
         card.id='Id'+data[i].songName;
+
+        const PlayIconDiv = document.createElement('div');
+        PlayIconDiv.className="PlayIconDiv";
+        const playIcon = createPlayIcon('100px');
+        PlayIconDiv.innerHTML=playIcon;
+        card.appendChild(PlayIconDiv);
+
+
 
         const nameElement = document.createElement('h3');
         nameElement.textContent = data[i].songName;

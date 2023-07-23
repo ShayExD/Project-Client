@@ -108,10 +108,11 @@ function songsInformation(){
 }
 
 function BuildObjectSongsWithCount(){
+    console.log(SongsNameWithCount);
     SongsAddedToFavorites=[];
     for(let eachSong of SongsNameWithCount ){
         for(let song of AllSongs){
-            if(eachSong.songName==song.songName){
+            if(eachSong.songName==song.songName && eachSong.artist==song.artist){
                 let songWithCount=createSongWithCount(song.id,song.artist,song.songName,song.lyrics,eachSong.occurrenceInFav);
                 SongsAddedToFavorites.push(songWithCount);
             }
