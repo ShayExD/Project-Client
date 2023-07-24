@@ -2,52 +2,63 @@ const questions = [
     {
       content: "Which artist released the album '21'?",
       answers: ["Adele", "ABBA", "Aerosmith", "Blur"],
-      correctAnswerIndex: 0, // Adele
+      correctAnswerIndex: 0,// Adele
+      indexQuestion:0
     },
     {
       content: "Which artist is known for the hit song 'Dancing Queen'?",
       answers: ["Adele", "ABBA", "Aerosmith", "Blur"],
       correctAnswerIndex: 1, // ABBA
+      indexQuestion:1
     },
     {
       content: "Which artist is the lead singer of the band 'Aerosmith'?",
       answers: ["Adele", "ABBA", "Aerosmith", "Blur"],
       correctAnswerIndex: 2, // Aerosmith
+      indexQuestion:2
     },
     {
       content: "Which artist released the album 'The Times They Are a-Changin'?",
       answers: ["Adele", "ABBA", "Aerosmith", "Bob Dylan"],
       correctAnswerIndex: 3, // Bob Dylan
+      indexQuestion:3
     },
     {
       content: "Which artist is known for the hit song 'Like a Rolling Stone'?",
       answers: ["Adele", "ABBA", "Aerosmith", "Bob Dylan"],
       correctAnswerIndex: 3, // Bob Dylan
+      indexQuestion:4
+
     },
     {
       content: "Which artist released the album '25'?",
       answers: ["Adele", "ABBA", "Aerosmith", "Blur"],
       correctAnswerIndex: 0, // Adele
+      indexQuestion:5
     },
     {
       content: "Which artist is known for the hit song 'Waterloo'?",
       answers: ["Adele", "ABBA", "Aerosmith", "Blur"],
       correctAnswerIndex: 1, // ABBA
+      indexQuestion:6
     },
     {
       content: "Which artist is known as the 'Bad Boys from Boston'?",
       answers: ["Adele", "ABBA", "Aerosmith", "Blur"],
       correctAnswerIndex: 2, // Aerosmith
+      indexQuestion:7
     },
     {
       content: "Which artist released the album 'Parklife'?",
       answers: ["Adele", "ABBA", "Aerosmith", "Blur"],
       correctAnswerIndex: 3, // Blur
+      indexQuestion:8
     },
     {
       content: "Which artist is known for the hit song 'The Man in the Long Black Coat'?",
       answers: ["Adele", "ABBA", "Aerosmith", "Bob Dylan"],
-      correctAnswerIndex: 3, // Bob Dylan
+      correctAnswerIndex: 3,// Bob Dylan
+      indexQuestion:9
     },
     // Add even more questions about the artists or any other topics you'd like.
   ];
@@ -68,7 +79,6 @@ const questions = [
         const remainingQuestions = questions.filter((_, index) => !previousQuestionIndexes.includes(index));
         const randomQuestion = remainingQuestions[Math.floor(Math.random() * remainingQuestions.length)];
         console.log(randomQuestion);
-        // Shuffle the answers array randomly  
         return randomQuestion;
       }
 
@@ -90,7 +100,7 @@ function checkAnswer(selectedIndex) {
 
   setTimeout(() => {
     if (currentLevel < 3) {
-      previousQuestionIndexes.push(currentLevel - 1);
+      previousQuestionIndexes.push(currentQuestion.indexQuestion);
       currentLevel++;
       showNextQuestion();
     } else {

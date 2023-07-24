@@ -79,7 +79,12 @@
 
     #searchButton{
       position: absolute;
-      right: 20px;
+      right: 24px;
+    }
+    #searchOptions{
+      position: absolute;
+      right: 88px;
+      width: 100px;
     }
 
     .card-container.artistsCardContainers{
