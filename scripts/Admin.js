@@ -30,19 +30,19 @@ let FullDetailsArtists=[];
 
 
 async function initInformation(){
-    const apiUsers = `https://localhost:7087/api/Users/getAllUsers`;
+    const apiUsers = `https://proj.ruppin.ac.il/cgroup23/test2/tar1/api/Users/getAllUsers`;
     ajaxCall("GET", apiUsers, "", successGetAllUsers, errorGetAllUsers);
 
-    const apiSongs = `https://localhost:7087/api/Song/GetAllSongs`;
+    const apiSongs = `https://proj.ruppin.ac.il/cgroup23/test2/tar1/api/Song/GetAllSongs`;
     ajaxCall("GET", apiSongs, "", successGetAllSongs, errorGetAllSongs);
 
-    const apiSongsFavorites = `https://localhost:7087/api/Song/getSongsCountInFavorite`;
+    const apiSongsFavorites = `https://proj.ruppin.ac.il/cgroup23/test2/tar1/api/Song/getSongsCountInFavorite`;
     ajaxCall("GET", apiSongsFavorites, "", successGetSongsFavorites, errorGetSongsFavorites);
 
-    const apiArtists = `https://localhost:7087/api/Song/GetAllArtists`;
+    const apiArtists = `https://proj.ruppin.ac.il/cgroup23/test2/tar1/api/Song/GetAllArtists`;
     ajaxCall("GET", apiArtists, "", successGetAllArtists, errorGetAllArtists);
 
-    const apiArtistsCount = `https://localhost:7087/api/Artists/getArtistCountInFavorite`;
+    const apiArtistsCount = `https://proj.ruppin.ac.il/cgroup23/test2/tar1/api/Artists/getArtistCountInFavorite`;
     ajaxCall("GET", apiArtistsCount, "", successGetAllArtistsCount, errorGetAllArtistsCount);
 
     await wait(3000);
@@ -215,7 +215,7 @@ function usersInformation(){
 
   function successGetAllUsers(data){
     for(user of data){
-       const api = `https://localhost:7087/api/Users/userFavoriteSongs?idUser=${user.id}`;
+       const api = `https://proj.ruppin.ac.il/cgroup23/test2/tar1/api/Users/userFavoriteSongs?idUser=${user.id}`;
         ajaxCall("GET", api, "", successGetFavoriteSongs, errorGetFavoriteSongs);
     }
     AllUsers=data;

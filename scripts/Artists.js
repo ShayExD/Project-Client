@@ -10,7 +10,7 @@ function initArtist(){
             renderRightHeader();
         }
     }
-        const api = `https://localhost:7087/api/Song/GetAllArtists`
+        const api = `https://proj.ruppin.ac.il/cgroup23/test2/tar1/api/Song/GetAllArtists`
         ajaxCall("GET", api, "", successrenderAllartists, errorrenderAllartists);
         return false;
 

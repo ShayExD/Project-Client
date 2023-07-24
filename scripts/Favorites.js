@@ -7,7 +7,7 @@ function initFavorite() {
 
 function renderFavoriteSongs() {
     let userId = JSON.parse(localStorage.getItem('logged user')).id;
-    const api = `https://localhost:7087/api/Users/userFavoriteSongs?idUser=${userId}`
+    const api = `https://proj.ruppin.ac.il/cgroup23/test2/tar1/api/Users/userFavoriteSongs?idUser=${userId}`
     ajaxCall("GET", api, "", successrenderFavoriteSongs, errorrenderFavoriteSongs);
     return false;
 }
