@@ -10,7 +10,7 @@ function initArtist(){
             renderRightHeader();
         }
     }
-        const api = `https://proj.ruppin.ac.il/cgroup23/test2/tar1/api/Song/GetAllArtists`
+        const api = `https://proj.ruppin.ac.il/cgroup23/test2/tar1/api/Song/GetAllArtists`;
         ajaxCall("GET", api, "", successrenderAllartists, errorrenderAllartists);
         return false;
 
@@ -22,7 +22,7 @@ function successrenderAllartists(ListOfArtists){
 for (let name of ListOfArtists){
     let artist = name;
     $.ajax({
-        url: 'http://ws.audioscrobbler.com/2.0/',
+        url: 'https://ws.audioscrobbler.com/2.0/',
         method: 'GET',
         data: {
           method: 'artist.getinfo',
