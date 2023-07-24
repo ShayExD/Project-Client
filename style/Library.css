@@ -25,6 +25,7 @@
     padding: 8px;
     margin-right: 10px;
   }
+  
 
   .search-container select {
     position: relative;
@@ -74,6 +75,11 @@
     .search-container {
       width: 95%;
       margin-top: 100px;
+    }
+
+    #searchButton{
+      position: absolute;
+      right: 20px;
     }
 
     .card-container.artistsCardContainers{

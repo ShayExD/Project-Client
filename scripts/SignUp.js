@@ -27,7 +27,7 @@ function successSubmitSignUp(data) {
                 swal("Sign Up Succeed", "Great Job", "success");
                 window.location.href = "Home.html"
             }
-            if(data==false){
+            if(data==null){
                 swal("User Already Exist", "try another", "error");
             }
         }

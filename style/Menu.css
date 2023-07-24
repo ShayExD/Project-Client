@@ -73,10 +73,19 @@ height: 150px;
 
     @media screen and (max-width: 768px) {
         .user {
-            display: none;
-            
+            display: block;
+            position: absolute;
+            left:20px;
+            top:35px;
+            width: 30px;
+            font-size: 8px;
+            height: 30px;
+            display: block;
         }
-
+        .user p{
+            display: none;
+        }
+        
     }
 
   
