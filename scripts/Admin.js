@@ -42,7 +42,7 @@ async function initInformation(){
     const apiArtists = `https://localhost:7087/api/Song/GetAllArtists`;
     ajaxCall("GET", apiArtists, "", successGetAllArtists, errorGetAllArtists);
 
-    const apiArtistsCount = `https://localhost:7087/api/Song/getArtistCountInFavorite`;
+    const apiArtistsCount = `https://localhost:7087/api/Artists/getArtistCountInFavorite`;
     ajaxCall("GET", apiArtistsCount, "", successGetAllArtistsCount, errorGetAllArtistsCount);
 
     await wait(2500);

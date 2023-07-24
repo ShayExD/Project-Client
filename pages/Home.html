@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../style/carousle.css">
     <link rel="stylesheet" href="../style/Home.css">
     <link rel="stylesheet" href="../style/Quiz.css">
+    <link href="../style/Library.css" rel="stylesheet" />
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
@@ -15,6 +17,7 @@
     <script src="../scripts/ajaxCalls.js"></script>
     <script src="../scripts/Models.js"></script>
     <script defer="1" src="../scripts/Quiz.js"></script>
+    <script src="../scripts/HuggingFace.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
             integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
@@ -35,10 +38,10 @@
         <div class="logo"><img src="../images/logo.png"></div>
         <ul id="ul" class="menu-items">
             <li><a href="Home.html">Home</a></li>-->
-            <!--<li><a href="Login.html">Login</a></li>
-            <li><a href="SignUp.html">Sign Up</a></li>
-            <li><a href="Library.html">Library</a></li>-->
-        <!--</ul>
+    <!--<li><a href="Login.html">Login</a></li>
+    <li><a href="SignUp.html">Sign Up</a></li>
+    <li><a href="Library.html">Library</a></li>-->
+    <!--</ul>
         <div class="hamburger" onclick="toggleMenu()">
             <span></span>
             <span></span>
@@ -97,10 +100,17 @@
         </div>
     </div>
     <div id="quiz-container">
-      <div id="quiz-header">Artists Quiz</div>
-      <div id="question-container"></div>
+        <div id="quiz-header">Artists Quiz</div>
+        <div id="question-container"></div>
     </div>
 
+    <div id="HuggingFace" class="search-container">
+        <input id="TextIn" type="text" placeholder="Enter Your Lyrics" />
+        <button onclick="renderTextToLyrics()" value="search" id="searchButton">Click!</button>
+    </div>
+    <div class="Answer">
+        <p id="OutPut"></p>
+    </div>
     <script>
         var carousel = $(".carousel"),
             currdeg = 0;

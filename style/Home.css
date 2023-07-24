@@ -11,18 +11,45 @@
     overflow: auto;
   }
 
-  #dynamic-title{
-    font-size: 70px
+@media screen and (max-width: 600px) {
 
-  }
-
-
-  @media screen and (max-width: 600px) {
-
-#dynamic-title{
-  font-size: 45px;
-  margin-top: 115px;
-
+    #dynamic-title {
+        font-size: 45px;
+        margin-top: 115px;
+    }
 }
 
-  }
+@media screen and (max-width: 600px) {
+
+    #dynamic-title {
+        font-size: 45px;
+        margin-top: 115px;
+    }
+}
+
+#dynamic-title {
+    font-size: 70px
+}
+
+#HuggingFace {
+    margin-top: 30px;
+}
+
+#OutPut {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.Answer{
+    margin:auto;
+    margin-top:10px;
+    margin-bottom:50px;
+    height:50px;
+    width:500px;
+    border: 2px solid white;
+    border-radius:8px;
+}
+  
+

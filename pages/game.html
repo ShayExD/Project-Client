@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artist Quiz Game</title>
     <!--<script src="../scripts/game.js"></script>-->
-    <!--<link href="../style/game.css" rel="stylesheet" />-->
+    <link href="../style/game.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
             integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
             crossorigin="anonymous"></script>
@@ -33,7 +33,16 @@
         </nav>
     </header>
 
-    <img id="img" />
+    <div class="search-container">
+        <input id="TextIn" type="text" placeholder="Enter Your Lyrics" />
+        <button onclick="renderTextToLyrics()" value="search" id="searchButton">Click!</button>
+    </div>
+    <div class="Answer">
+        <p id="OutPut"></p>
+    </div>
+
+
+    <!--<img id="img" />-->
     <!--<header>
         <nav class="navbar">
             <div class="logo">
