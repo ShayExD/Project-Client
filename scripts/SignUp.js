@@ -15,15 +15,15 @@ function SubmitSignUp() {
         document.getElementById("email").value = "";
         document.getElementById("username").value = "";
         document.getElementById("password").value = "";
-        const api = `https://proj.ruppin.ac.il/cgroup23/test2/tar1/api/Users/SignUp`;
+        const api = `https://localhost:7087/api/Users/SignUp`;
             ajaxCall("POST", api, JSON.stringify(user), successSubmitSignUp, errorSubmitSignUp);
             return false;
         }
 
 function successSubmitSignUp(data) {
-             alert(data);
-            if(data==true){
-                localStorage.setItem("User", JSON.stringify(data));
+    console.log(data);
+    if (data != null){
+                localStorage.setItem("logged user", JSON.stringify(data));
                 swal("Sign Up Succeed", "Great Job", "success");
                 window.location.href = "Home.html"
             }
