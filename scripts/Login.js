@@ -2,7 +2,7 @@
 function SubmitLogin() {
     let email = $("#email").val()
     let password = $("#password").val()
-   const api = `https://localhost:7087/api/Users/logIn?email=${email}`
+   const api = `https://proj.ruppin.ac.il/cgroup23/test2/tar1/api/Users/logIn?email=${email}`
     ajaxCall("POST", api, JSON.stringify(password), successSubmitLogin, errorSubmitLogin);
     return false;
 }

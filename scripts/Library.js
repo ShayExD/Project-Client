@@ -153,7 +153,7 @@ function renderSearchByArtist()
 {
     let searchBar = document.getElementById("searchBar");
     let inputInSearchBar = searchBar.value;
-    const api = `https://localhost:7087/api/Song/getSongsByArtist?artist=${inputInSearchBar}`
+    const api = `https://proj.ruppin.ac.il/cgroup23/test2/tar1/api/Song/getSongsByArtist?artist=${inputInSearchBar}`
     ajaxCall("GET", api, "", successrenderSearchByArtist, errorrenderSearchByArtist);
     return false;
 }
@@ -177,7 +177,7 @@ function errorrenderSearchByArtist(err) {
 function renderSearchBySongsName() {
     let searchBar = document.getElementById("searchBar");
     let inputInSearchBar = searchBar.value;
-    const api = `https://localhost:7087/api/Song/getSongsBySongName?songName=${inputInSearchBar}`
+    const api = `https://proj.ruppin.ac.il/cgroup23/test2/tar1/api/Song/getSongsBySongName?songName=${inputInSearchBar}`
     ajaxCall("GET", api, "", successrenderSearchBySongsName, errorrrenderSearchBySongsName);
     return false;
 }
@@ -202,7 +202,7 @@ function errorrrenderSearchBySongsName(err) {
 function renderSearchAllSongs() {
     let searchBar = document.getElementById("searchBar");
     let inputInSearchBar = searchBar.value;
-    const api = `https://localhost:7087/api/Song/GetAllSongs`
+    const api = `https://proj.ruppin.ac.il/cgroup23/test2/tar1/api/Song/GetAllSongs`
     ajaxCall("GET", api, "", successrenderSearchAllSongs, errorrenderSearchAllSongs);
     return false;
 }
@@ -226,7 +226,7 @@ function errorrenderSearchAllSongs(err) {
 function renderSearchByLyrics() {
     let searchBar = document.getElementById("searchBar");
     let inputInSearchBar = searchBar.value;
-    const api = `https://localhost:7087/api/Song/getSongsByLyrics?lyrics=${inputInSearchBar}`
+    const api = `https://proj.ruppin.ac.il/cgroup23/test2/tar1/api/Song/getSongsByLyrics?lyrics=${inputInSearchBar}`
     ajaxCall("GET", api, "", successrenderSearchByLyrics, errorrrenderSearchByLyrics);
     return false;
 }
@@ -248,7 +248,7 @@ function errorrrenderSearchByLyrics(err) {
 
 function AddToFavorite(idSong,NameOfArtist) {
     let idUser = JSON.parse(localStorage.getItem('logged user')).id;
-     const api = `https://localhost:7087/api/Users/addToFavorite?idUser=${idUser}&idSong=${idSong}`
+     const api = `https://proj.ruppin.ac.il/cgroup23/test2/tar1/api/Users/addToFavorite?idUser=${idUser}&idSong=${idSong}`
     ajaxCall("POST", api, "", successAddToFavorite, errorAddToFavorite);
     return false;
 }

@@ -24,9 +24,10 @@ function errorrenderFavoriteSongs(err) {
 
 
 function DeleteFromFavorite(idSong) {
+
     let idUser = JSON.parse(localStorage.getItem('logged user')).id;
-    const api = `https://localhost:7087/api/Users/deleteSongFromFavorite?idUser=${idUser}&idSong=${idSong}`
-    ajaxCall("POST", api, "", successDeleteFromFavorite, errorDeleteFromFavorite);
+    const api = `https://proj.ruppin.ac.il/cgroup23/test2/tar1/api/Users/deleteSongFromFavorite?idUser=${idUser}&idSong=${idSong}`
+    ajaxCall("DELETE", api, "", successDeleteFromFavorite, errorDeleteFromFavorite);
     return false;
 }
 

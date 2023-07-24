@@ -15,7 +15,7 @@ function SubmitSignUp() {
         document.getElementById("email").value = "";
         document.getElementById("username").value = "";
         document.getElementById("password").value = "";
-        const api = `https://localhost:7087/api/Users/SignUp`;
+        const api = `https://proj.ruppin.ac.il/cgroup23/test2/tar1/api/Users/SignUp`;
             ajaxCall("POST", api, JSON.stringify(user), successSubmitSignUp, errorSubmitSignUp);
             return false;
         }
