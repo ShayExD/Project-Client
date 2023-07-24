@@ -45,17 +45,68 @@ async function initInformation(){
     const apiArtistsCount = `https://localhost:7087/api/Artists/getArtistCountInFavorite`;
     ajaxCall("GET", apiArtistsCount, "", successGetAllArtistsCount, errorGetAllArtistsCount);
 
-    await wait(2500);
+    await wait(3000);
 }
 
 function wait(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
-  }
+}
+
+async function loader(){
+document.body.innerHTML="";
+document.body.innerHTML=`<div id="loader">
+<img src="../images/logo.png" alt="Spotify Admin Loading">
+</div>`;
+showLoader();
+await initInformation();
+hideLoader();
 
 
-async function initAdmin(){
+
+}
+
+
+function showLoader() {
+    document.getElementById('loader').style.display = 'block';
+}
+
+  function hideLoader() {
+    document.getElementById('loader').style.display = 'none';
+    document.body.innerHTML=`<header>
+    <nav id="Homeheader" class="header navbar">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="logo"><img src="../images/logo.png"></div>
+
+        <ul id="ul" class="menu menu-items">
+            <li><a href="Home.html">Home</a></li>
+
+        </ul>
+    </nav>
+</header>
+<div style="text-align: center; color:white"><h1>Admin Interface</h1></div>
+
+<div class="container">
+    <ul class="selection-list">
+      <li id="users-infoID" class="users-info"><i class="icon fas fa-user"></i>Users Information</li>
+      <li id="songs-infoID" class="songs-info"><i class="icon fas fa-music"></i>Songs Information</li>
+      <li id="artist-infoID"  class="artist-info"><i class="icon fas fa-microphone-alt"></i>Artists Information</li>
+    </ul>
+  </div>
+<div id="WrapDiv"></div>`;
+
+
+}
+
+
+
+
+  async function initAdmin(){
+    await loader();
     init();
-    await initInformation();
     defineOnClicks();
 }
     

@@ -17,6 +17,11 @@
         font-size: 45px;
         margin-top: 115px;
     }
+
+    #HuggingTitle{
+      font-size: 40px;
+
+    }
 }
 
 
@@ -25,7 +30,38 @@
 }
 
 
+#HuggingTitle{
+  margin-bottom: -50px;
+  justify-content: center;
+  text-align: center;
+  font-size: 80px;
+  color:white;
+  display: flex;
+  align-items: center;
+}
+
+
+
+#KnowImg{
+  width: 100px;
+  height: 100px;
+}
+
+
 @media screen and (max-width: 600px) {
+
+  #KnowImg{
+    width: 70px;
+    height: 70px;
+  }
+
+
+  #KnowTitle{
+  width: 70%;
+  font-size: 40px;
+
+  }
+
 
     #dynamic-title {
         font-size: 45px;

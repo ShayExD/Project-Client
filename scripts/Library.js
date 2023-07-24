@@ -37,7 +37,6 @@ function createPlayIcon(size) {
     return svgCode;
   }
 
-
 function renderCards(data,flag){
     const cardContainer = document.getElementById('cardContainer');
     console.log(cardContainer);
