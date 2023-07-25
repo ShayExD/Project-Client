@@ -40,6 +40,13 @@ function renderHeader() {
             a6.href = "Artists.html";
             li6.appendChild(a6);
             ul.appendChild(li6);
+
+            const liAdditons = document.createElement('li');
+            const aAdditons = document.createElement('a');
+            aAdditons.textContent = "Additions";
+            aAdditons.href = "additions.html";
+            liAdditons.appendChild(aAdditons);
+            ul.appendChild(liAdditons);
         }
         else {
             const li4 = document.createElement('li');
@@ -70,6 +77,13 @@ function renderHeader() {
             a7.href = "Admin.html";
             li7.appendChild(a7);
             ul.appendChild(li7);
+
+            const liAdditons = document.createElement('li');
+            const aAdditons = document.createElement('a');
+            aAdditons.textContent = "Additions";
+            aAdditons.href = "additions.html";
+            liAdditons.appendChild(aAdditons);
+            ul.appendChild(liAdditons);
         }
     }
     else {
@@ -103,6 +117,12 @@ function renderHeader() {
         li4.appendChild(a4);
         ul.appendChild(li4);
 
+        const liAdditons = document.createElement('li');
+        const aAdditons = document.createElement('a');
+        aAdditons.textContent = "Additions";
+        aAdditons.href = "additions.html";
+        liAdditons.appendChild(aAdditons);
+        ul.appendChild(liAdditons);
 
     }
 }
